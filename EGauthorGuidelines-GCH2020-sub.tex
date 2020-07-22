@@ -1,0 +1,453 @@
+% ---------------------------------------------------------------------------
+% Author guideline and sample document for EG publication using LaTeX2e input
+% D.Fellner, v1.15, Dec 14, 2018
+% \httpAddr{//docs.miktex.org/manual/} 
+\documentclass{egpubl}
+\usepackage{gch2020}
+% --- for  Annual CONFERENCE
+% \ConferenceSubmission   % uncomment for Conference submission
+% \ConferencePaper        % uncomment for (final) Conference Paper
+% \STAR                   % uncomment for STAR contribution
+% \Tutorial               % uncomment for Tutorial contribution
+% \ShortPresentation      % uncomment for (final) Short Conference Presentation
+% \Areas                  % uncomment for Areas contribution
+% \MedicalPrize           % uncomment for Medical Prize contribution
+% \Education              % uncomment for Education contribution
+% \Poster                 % uncomment for Poster contribution
+% \DC                     % uncomment for Doctoral Consortium
+%
+% --- for  CGF Journal
+% \JournalSubmission    % uncomment for submission to Computer Graphics Forum
+% \JournalPaper         % uncomment for final version of Journal Paper
+%
+% --- for  CGF Journal: special issue
+% \SpecialIssueSubmission    % uncomment for submission to , special issue
+% \SpecialIssuePaper         % uncomment for final version of Computer Graphics Forum, special issue
+%                          % EuroVis, SGP, Rendering, PG
+% --- for  EG Workshop Proceedings
+ \WsSubmission      % uncomment for submission to EG Workshop
+% \WsPaper           % uncomment for final version of EG Workshop contribution
+% \WsSubmissionJoint % for joint events, for example ICAT-EGVE
+% \WsPaperJoint      % for joint events, for example ICAT-EGVE
+% \Expressive        % for SBIM, CAe, NPAR
+% \DigitalHeritagePaper
+% \PaperL2P          % for events EG only asks for License to Publish
+
+% --- for EuroVis 
+% for full papers use \SpecialIssuePaper
+% \STAREurovis   % for EuroVis additional material 
+% \EuroVisPoster % for EuroVis additional material 
+% \EuroVisShort  % for EuroVis additional material
+
+% !! *please* don't change anything above
+% !! unless you REALLY know what you are doing
+% ------------------------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{dfadobe}  
+\usepackage{multirow}
+
+\usepackage{cite}  % comment out for biblatex with backend=biber
+% ---------------------------
+%\biberVersion
+\BibtexOrBiblatex
+%\usepackage[backend=biber,bibstyle=EG,citestyle=alphabetic,backref=true]{biblatex} 
+%\addbibresource{egbibsample.bib}
+% ---------------------------  
+\electronicVersion
+\PrintedOrElectronic
+% for including postscript figures
+% mind: package option 'draft' will replace PS figure by a filename within a frame
+\ifpdf \usepackage[pdftex]{graphicx} \pdfcompresslevel=9
+\else \usepackage[dvips]{graphicx} \fi
+
+\usepackage{egweblnk} 
+\hypersetup{breaklinks=true}
+% end of prologue
+
+% ---------------------------------------------------------------------
+% EG author guidelines plus sample file for EG publication using LaTeX2e input
+% D.Fellner, v2.03, Dec 14, 2018
+
+
+\title[Heritage in lockdown: digital provision of memory institutions during the Covid-19 crisis]%
+      {Heritage in lockdown: digital provision of memory institutions in the United Kingdom and United States during the Covid-19 crisis}
+
+% for anonymous conference submission please enter your SUBMISSION ID
+% instead of the author's name (and leave the affiliation blank) !!
+% for final version: please provide your *own* ORCID in the brackets following \orcid; see https://orcid.org/ for more details.
+% \author[D. Fellner \& S. Behnke]
+% {\parbox{\textwidth}{\centering D.\,W. Fellner\thanks{Chairman Eurographics Publications Board}$^{1,2}$\orcid{0000-0001-7756-0901}
+%         and S. Behnke$^{2}$\orcid{0000-0001-5923-423X} 
+% %        S. Spencer$^2$\thanks{Chairman Siggraph Publications Board}
+%         }
+%         \\
+% % For Computer Graphics Forum: Please use the abbreviation of your first name.
+% {\parbox{\textwidth}{\centering $^1$TU Darmstadt \& Fraunhofer IGD, Germany\\
+%          $^2$Graz University of Technology, Institute of Computer Graphics and Knowledge Visualization, Austria
+% %        $^2$ Another Department to illustrate the use in papers from authors
+% %             with different affiliations
+%        }
+% }
+% }
+% ------------------------------------------------------------------------
+
+% if the Editors-in-Chief have given you the data, you may uncomment
+% the following five lines and insert it here
+%
+% \volume{36}   % the volume in which the issue will be published;
+% \issue{1}     % the issue number of the publication
+% \pStartPage{1}      % set starting page
+
+
+%-------------------------------------------------------------------------
+\begin{document}
+
+\teaser{
+ \includegraphics[width=0.6\linewidth]{images/cloud.png}
+ \centering
+  \caption{Word cloud of common keywords for digital offerings of memory institutions during COVID-19 lockdown}
+\label{fig:teaser}
+}
+
+\maketitle
+%-------------------------------------------------------------------------
+\begin{abstract}
+   The ABSTRACT is to be in fully-justified italicized text, 
+   between two horizontal lines,
+   in one-column format, 
+   below the author and affiliation information. 
+   Use the word ``Abstract'' as the title, in 9-point Times, boldface type, 
+   left-aligned to the text, initially capitalized. 
+   The abstract is to be in 9-point, single-spaced type.
+   The abstract may be up to 3 inches (7.62 cm) long. \\
+   Leave one blank line after the abstract, 
+   then add the subject categories according to the ACM Classification Index 
+%-------------------------------------------------------------------------
+%  ACM CCS 1998
+%  (see https://www.acm.org/publications/computing-classification-system/1998)
+% \begin{classification} % according to https://www.acm.org/publications/computing-classification-system/1998
+% \CCScat{Computer Graphics}{I.3.3}{Picture/Image Generation}{Line and curve generation}
+% \end{classification}
+%-------------------------------------------------------------------------
+%  ACM CCS 2012
+   (see https://www.acm.org/publications/class-2012)
+%The tool at \url{http://dl.acm.org/ccs.cfm} can be used to generate
+% CCS codes.
+%Example:
+\begin{CCSXML}
+<ccs2012>
+<concept>
+<concept_id>10010147.10010371.10010352.10010381</concept_id>
+<concept_desc>Computing methodologies~Collision detection</concept_desc>
+<concept_significance>300</concept_significance>
+</concept>
+<concept>
+<concept_id>10010583.10010588.10010559</concept_id>
+<concept_desc>Hardware~Sensors and actuators</concept_desc>
+<concept_significance>300</concept_significance>
+</concept>
+<concept>
+<concept_id>10010583.10010584.10010587</concept_id>
+<concept_desc>Hardware~PCB design and layout</concept_desc>
+<concept_significance>100</concept_significance>
+</concept>
+</ccs2012>
+\end{CCSXML}
+
+\ccsdesc[300]{Computing methodologies~Collision detection}
+\ccsdesc[300]{Hardware~Sensors and actuators}
+\ccsdesc[100]{Hardware~PCB design and layout}
+
+
+\printccsdesc   
+\end{abstract}  
+%-------------------------------------------------------------------------
+\section{Introduction}
+Museums and heritage institutions are a key element for society, especially during crises, as they are an essential part of the identity of the peoples and nations as well as a vital element for the communities they serve. As repositories of scientific knowledge, tangible and intangible evidence of different cultures and societies, their role is key in empowering people, especially in times of uncertainty such as the ones we live today \cite{ICOM:2020}.
+
+As the impact of the COVID-19 lockdown on everyday lives dawned on people early in 2020, digital media consumption behaviour changed dramatically as millions of people tried to cope with the realities imposed by the lockdown. The UK reported a 29\% increase on the time spent online, and a 20\% increase of people using social media \cite{ofcom:2020}. 
+
+Moreover, the impact of COVID19 on arts and culture cannot be underestimated, as cultural venues as well as exhibitions and art programmes had to be closed, postponed or cancelled. Despite this, the sector has demonstrated resilience by adapting their digital provision to provide access to arts and culture in order to reduce isolation, improve mental health and support the educational needs of audiences.
+
+This paper presents research conducted during the lockdown period in the UK, as a means to  understand the public facing digital capabilities of memory institutions in the UK; and how these capabilities enabled access provision during the COVID-19 pandemic. In addition, we developed a comparative assessment of  other international approaches to digital culture during the lockdown  by collecting and analysing data of the United States (U.S.). The reasons for this were varied including i) the wide variety of museums and heritage organisations and their perceived good access to digital technologies in terms of expertise and capacity; ii) the similar timeline of lockdown to the UK as most U.S. states (either state-wide, or phased in on a county-by-county basis) began to impose "stay-at-home orders" from mid-March onwards; and iii) the multiple societal challenges where heritage might play a role.
+
+The research deploy of an interdisciplinary methodology based on primary and secondary research including an extensive survey of digital offering on the web and the analysis of  the data. The development of the research and the results are reported in this paper. The paper’s main contributions include: i) a unique insight into memory institutions’ digital offerings during a three month period where the UK was under strict lockdown; as well as ii) an in-depth analysis based on the collected data which can inform future development of museums and heritage organisations for adopting digital technologies to keep content relevant to societal needs. For instance, the data collected allowed us to identify trends and novel ways of delivering access which might prove transformational during the following years.
+
+The paper is organised as follows: Section X describes the context and related work in this area; while section X presents the methodology which was used for conducting the research. Section X and X presents the primary data capture and the analysis of the data. Finally, Section X presents conclusions and further work.  
+
+%-------------------------------------------------------------------------
+\section{Context and Related Work}
+-> requirements, challenges of the sector, measures etc
+
+
+\subsection{Context}
+Presentation of situation for museums, what are the main challenges (funding, civic museums-those under a Trust, resilience, recovery of communities, reopening)
+What are the main suggestions from cultural organisations and bodies to help museums cope with Covid. Mention here what are the aspects they prioritise (requirements).
+Lara might want to add on wellbeing here.
+Might add about social inclusion here (see ICOM museum day celebration)
+\subsection{Related Work}
+The surveys that organisations such as ICOM, UNESCO, NEMO, Art Fund, Heritage Fund have published. What do they demonstrate (key findings with respect to digital offerings).
+We might want to add somewhere here that there is research about the digital offerings from major organisations analysing the digital provision during lockdown, but we have to emphasize that we look at it from the “opposite” side, by actually analysing the offerings further and seeing their relation to audiences. Also we might want to emphasize that this research not only provides an in-depth examination of the digital provision, but might also highlight key trends about the digital future of museums and new ways of funcion.
+
+%-------------------------------------------------------------------------
+
+\section{Methodology}
+-> How we created the list of museums, and strategies for recording.
+Research questions:
+What  was being offered? By whom?
+Does the data demonstrate if offerings match needs that have emerged?
+The research questions which were investigated are as follows:
+1) Which web-based digital provision was available to audiences during the UK lockdown period by UK and US museums? 
+2) Which traditional and non-traditional audiences that this digital provision was targeting?
+3) Which types of content museums engaged, ranging from text-based to more complex spatial-visual types of content, including Virtual Reality and panoramic images?
+4) How museums seek financial support from audiences?
+5) How museums kept content relevant to peoples’ challenges, including isolation, mental wellbeing and inclusivity?
+
+Match questions to the questions in introduction when we finalise them.
+Here we need to analyse:
+Classification of offerings under type and subtype (a table could also show what these are)
+Audiences (specific reference to Covid audiences) and what they are
+Sample selection 
+What type of analysis do we use and validity / triangulation (data triangulation: museums in two countries, national, small, civic, special theme museums \& “investigator” /analyst  triangulation: more than one researchers to collect and classify and analyse data)
+
+%-------------------------------------------------------------------------
+
+\section{Data Capture}
+The data capture involved surveying memory institutions’ websites as described above. In total, we surveyed 83 memory institutions both in the UK and the US (48 institutions in the  UK and 35 institutions in the US). The selection included major institutions from both countries (e.g. based on visitor numbers in wikipedia) plus a selection of smaller civic, historic and/or city museums. For this additional selection, we made use of the National Museums Director Council in the UK \cite{nationalmuseums:2020}; and made a selection of smaller museums in different states of the US. For some memory institutions, which are aggregated under an umbrella trust, we surveyed the umbrella organisation as in most cases the COVID response is the same in smaller organisations as in the biggest one of the same consortium/trust (with one or two different resources sometimes).
+
+When surveying, researchers followed a strategy to identify what digital offering was deemed to be a COVID-19 response, as opposed to traditional website content. This was very difficult in some cases, as many institutions repurposed or sign-posted existing content as being COVID-19 relevant. This was not surprising given how relevant memory institutions are for the educational, wellbeing, and self-improving needs of communities. Thus, most organisations restructured their content to address the pandemic by creating COVID-19 “highlights” or “sliders” on their front pages. These new pages allowed users to reach a variety of relevant content instead of reaching the content through the traditional website menu structure. The variety of COVID-19 resources in each institution was vast, and researchers followed these highlighted routes to identify which digital offerings were relevant for the survey.
+
+Furthermore, it was not straightforward to identify the impact that the digital offering had on users. This is because it is difficult to measure access to web pages without having access to museums’ web teams. Exceptions are the number of views on websites such as YouTube, followers in social media, or number of downloads in sites such as SketchFab. However, even these were difficult to directly relate as being COVID-19 specific as most content was available before the lockdown. Instead we undertook a different approach by recording all URL to digital offerings. With these URLs, we were able to query the keywords made available on the web page titles and analyse the popularity of keywords in search queries in Google Search across various regions and languages. 
+
+In order to offer a meaningful classification of the results, we adopted different classification and sub-classification including: the types of digital offering, the type of audiences, the type of content, the type of memory institutions and types of donations which institutions were requesting during this period. These are described below.
+
+\subsection{Digital offerings}
+An important task of data capture was to design an appropriate classification for digital offerings. This classification had to enable researchers to record as accurately as possible the purpose of the content which was being offered to visitors during the COVID-19 lockdown period. As mentioned previously, a large majority of the content was not specific to COVID-19 related topics. Hence, the classification was generic to deal with a variety of offerings by memory institutions. Table~\ref{tab:digoffer} shows this classification, which categorizes offerings into seven categories: collection, virtual visit, learning, home activities, events, funding and communication. Inevitably, there is overlap between different categories as access to the collection could enable learning or be a home activity. However, we categorise digital offerings according to how the content was being presented using a variety of keywords to highlight its purpose. 
+
+Also, Table~\ref{tab:digoffer} shows a subtype classification we designed to further classify each type of digital offering. This was particularly important for understanding the types of access to the collection being offered, the types of events memory institutions organised and the types of communication strategies they used during this period. Thus, subtypes of the ``Collection'' type digital offering could include: free database exploration, guided exploration, collection related resources, 3D collection, image database/resources as well as collecting content. The latter was particularly of interest as some memory institutions set to actively collect digital content or objects from the public during the lockdown period.
+
+\begin{table}
+\begin{tabular}
+{ | l | l | }
+    \hline
+    Digital Offering Type  & Subtype  \\
+    \hline
+  \multirow{6}{*}{Collection} & Free database exploration  \\
+&  Guided exploration  \\
+&  Collection related resources \\
+&  3D collection \\
+&  Images database/resources \\
+&  Collecting content \\
+    \hline
+ \multirow{2}{*}{Virtual visit} & Gallery tour  \\
+&  Audio tour  \\
+    \hline
+ Learning & Educational material  \\
+    \hline
+ \multirow{2}{*}{Home activities} & Creative activities \\
+&  Wellbeing activities  \\
+    \hline
+ \multirow{4}{*}{Events} & Festival\\
+&  Live event \\
+&  Other \\
+&  Competition \\
+    \hline
+ Funding & comercial venture \\
+    \hline
+ \multirow{12}{*}{Communication} & COVID-19 communication \\
+& Podcast \\
+& Blog/articles' section \\
+& Social media  \\
+& Videos \\
+& Student/artist resources \\
+& Racism related \\
+& Practical info \\
+& Digital publications \\
+& Practical info \\
+& Music lists \\
+& Other \\
+    \hline
+\end{tabular}
+\caption{\label{tab:digoffer}Digital offering types and subtypes used in the survey}
+\end{table}
+
+\subsection{COVID-19 Audiences}
+As a means to understand which traditional and non-traditional audiences the digital offering which memory institutions provided was being targeted, we created a segmentation of COVID-19 relevant audiences. Although, it will have been possible to adapt existing segmentations used by institutions already \cite{Drot19}; instead we adopted Jones \cite{Audiences2020} proposed COVID-19 audience segmentation. This segmentation takes into account how digital offerings of memory institutions fulfill emotional needs of people affected by the pandemic. As such the classification distinguishes between people who have specific educational (e.g., teachers, learners, parents doing home schooling), wellbeing issues (e.g. lonely or grieving  people, bored), beyond traditional museum audiences (e.g. local community, internal and museum audiences). The types of audiences include: Bored people, Desperate parents \& children, Teachers at sea, Higher education/Professional teaching online, Eager learners, Stressed out/scared people, Grieving people, People who can’t stop working on their job sites, Museum constituencies (specific interest/core audiences for content), Museum members/donors, Local community, Lonely people, Working from Home / Newly unemployed, People wanting to help others, Internal audiences.
+
+\subsection{Digital Content}
+To further understand what the digital offering consists of, the survey recorded a description of the offering and a type of content. Although most webpages consists of text and image elements, we also recorded whether the offering included more complex data types, such as video (including live video stream), audio, 360º virtual tour and interactive panorama/VR/AR type experiences, 3D objects or interactive games and activities. The latter visual types of content were of particular interest, as they allow for audiences to engage more actively with the digital offering. They can either allow audiences to explore the collection, and/or to the exhibition physical space; for example, images of the collection, interactive panoramic tours,  behind the scenes audiovisual material, and virtual galleries/visit. Besides being a popular type of content, visual content has some advantages for audiences, such as being more inclusive to multiple understandings and interpretations, as well as overcoming communication barriers, such as language and attention barriers. However, it can also be less accessible for those with disabilities if the content has not been designed appropriately.
+
+\subsection{Memory institutions}
+The survey included a variety of memory institutions’ types illustrated in Figure~\ref{fig:MType}. Some institutions were recorded under two or more categories, either because they present a variety of collections or to address the fact that we selected umbrella organisations who oversee different types of smaller institutions. The data recorded for each museum also included the city and country where the museum was located, as well as a Wikidata code so that more information could be retrieved during the analysis phase.
+
+\subsection{Funding and donations}
+Given the importance of memory institutions’ finances during the COVID-19 crisis, the survey recorded specific data regarding whether some institutions highlighted potential ways audiences could contribute to support financially the museum. Hence, the survey also recorded calls for donations in relationship to the COVID-19 needs of institutions. Although many institutions normally request for donations, we recorded whether there was a specific COVID-19 message when requesting donations. For this, we recorded different types of funding, including i) call for donations emphasising (or not)  COVID-19, ii) call to support through other means, such as shop purchases, memberships or gifts; and iii) or when there was no specific call for donations.
+
+Beside the types previously described, data was also recorded - when available, regarding the author and date of creation of the digital offering, its URL and any additional comment which was worth recording. Data was recorded from April the 23rd 2020, only one month after the UK went into lockdown, until the 31st of July 2020, a few weeks after museums and galleries were allowed to reopen to the public. The following subsection will present and analyse the resulting data. 
+
+%-------------------------------------------------------------------------
+
+\section{Analysis of digital offering provision }
+The analysis of the data collected allowed us to explore in detail the digital offerings of memory institutions during the COVID-19 lockdown period in order to answer the research questions. To recap, these questions related to: 1) the types of digital offerings, and the nature of the content, which was available to audiences; 2) the types of audiences these offerings targeted; 4) the financial support seeked by museums from audiences; and 3) exploring how the digital offerings matched needs that emerged during the COVID-19 pandemic in particular with regards to peoples’ challenges, including isolation, mental wellbeing and inclusivity. The following subsections will analyse each of these elements, starting by an overview of the museums included in the survey.
+
+\subsection{Overview of memory institutions surveyed}
+As Figure~\ref{fig:MType} illustrates the survey included a good mixture of museums which might be dealing with providing access to collection resources and exhibitions; as well as historic houses which might be dealing with enabling to experience the building itself and its history through the digital offering. 
+
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\linewidth]{images/museumtype.png}
+  % replacing the above command with the one below will explicitly set
+  % the bounding box of the PS figure to the rectangle (xl,yl),(xh,yh).
+  % It will also prevent LaTeX from reading the PS file to determine
+  % the bounding box (i.e., it will speed up the compilation process)
+  % \includegraphics[width=.95\linewidth, bb=39 696 126 756]{sampleFig}
+  %
+  % \parbox[t]{.9\columnwidth}{\relax
+  %          For all figures please keep in mind that you \textbf{must not}
+  %          use images with transparent background! 
+  %          }
+  %
+  \caption{\label{fig:MType}
+           Number of different types of memory institutions surveyed}
+\end{figure}
+
+
+
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\linewidth]{images/audiencesUK.png}
+  \includegraphics[width=\linewidth]{images/audiencesUS.png}
+  \caption{\label{fig:MTypeAudiences}
+           Types of Audiences targetted by types of institutions in the UK (top) and in the US (bottom)}
+\end{figure}
+Figures~\ref{fig:MTypeAudiences} describes the audiences targeted by each type of memory institution, both in the UK (top) and the US (bottom). The graph also shows the number of digital offerings for each combination, with a maximum of approximately 120 digital offerings for eager learners provided by Art as well as Art and History institutions in the UK and approximately 182 digital offerings for Eager Learners by History/Historic House or Place. The data illustrates the strong emphasis on memory institutions addressing educational needs of audiences during the pandemic, with a strong focus on audiences including teachers, higher education, professional teaching, as well as eager learners in both countries. In both countries, there is a clear evidence of having a lesser focus on internal audiences, people wanting to help others, and local communities. 
+
+
+This data confirms the fact that many memory institutions repurposed material, already available, which supports established aims of these institutions (e.g. education); as well as the lack of digital offerings which tackle specific well-being needs and engagement with the local community and internal audiences. Some examples of this latter type of  offerings includes physical activity packs which were offered by the Exeter Royal Albert Memorial Museum \& Art Gallery to shielded, vulnerable and isolated people in the city to help ease lockdown boredom \cite{ex2020}; as well as a ``Cultural First Aid kit'', developed by Manchester Museum, focusing on wellbeing for people in hospitals and care centres \cite{man2020}. 
+
+% Table~ref
+
+% \begin{figure}[h]
+%   \centering
+%   \includegraphics[width=\linewidth]{images/typescontent.png}
+%   % replacing the above command with the one below will explicitly set
+%   % the bounding box of the PS figure to the rectangle (xl,yl),(xh,yh).
+%   % It will also prevent LaTeX from reading the PS file to determine
+%   % the bounding box (i.e., it will speed up the compilation process)
+%   % \includegraphics[width=.95\linewidth, bb=39 696 126 756]{sampleFig}
+%   % %
+%   % \parbox[t]{.9\columnwidth}{\relax
+%   %          For all figures please keep in mind that you \textbf{must not}
+%   %          use images with transparent background! 
+%   %          }
+%   %
+%   \caption{\label{fig:MTypeAudiences}
+%            Types of Content made available by institutions both in the UK and the US.}
+% \end{figure}
+
+
+\subsection{Overview of digital offering surveyed}
+The data collected demonstrate that museums
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\linewidth]{images/numdigitalofferings.png}
+  \caption{\label{fig:DigOffType}
+           Types of digital offerings during the COVID-19 period}
+\end{figure}
+
+
+
+
+Type - audiences
+Subtype - audiences
+
+Type - museum type
+
+
+Subtype - museum type
+
+Data  categorised  as  type of museum - do focus on wellbeing happening by certain types of museums?
+Type of offerings per country
+Types and strongest subtypes (within each type) per country
+Type and then subtype per audience
+Which audience is mostly targeted for the overall provision
+Which is the strongest/more popular format 
+What do data show about donation campaigns
+Which museums target groups that need support through wellbeing activities
+How many museums collected content 
+
+
+
+5.1 Interesting/“special” offerings 
+Demonstrate some of the novelties that have emerged (look at section 3 of my document and add to categories below)
+Also: 
+Curators’ view and tours in exhibitions to give a “personal touch” (plus last minute “emergency” tours before closure)
+Covid related content collection (to document the health crisis)
+Monetizing digital offerings (income generating)
+Connection to other sites and cultural institutions (solidarity)
+Well being, mental health focus, mention the very limited examples that offer physical offerings for those  that do not have access to the digital provision.
+Surveys about the future of digital offerings and reopening
+Decolonisation, Black lives matter
+Which digital offering request for payment? (I think this cannot be added here, but rather in the section of “special offerings”)
+
+\section{Discussion and Conclusions}
+Identified gaps:
+More training/skills are required to fulfill the novel digital requirements (digital literacy within the house). Freelancers have been amongst the first groups who stopped working for museums and there is no financial capacity to pay for freelancers' work (even though these were often assisting with digital work before the covid crisis). In order to adapt to the situation in house staff have had to take on new responsibilities. Also, digital inequality between big and smaller/rural museums is evident in reports and funding for digital activities is minimum (see section 7 of my document).
+Marketing opportunities  - how can museums produce revenue from digital offerings. How people have monetised digital offerings? (look at Money list article)
+Lack of agreed methods and metrics to measure digital engagement (mention relevant research and efforts -e.g. The audience agency- but there is no consensus).
+Future development:
+How can this content have a legacy beyond the lockdown and how the priorities of the sector might change (focus on digital instead of physical, communication between staff, more flexible working, diversity and inclusion because of flexible working, use of external spaces for exhibitions etc?)
+How local strategies can be developed to build resilience especially for older people (at home or in care homes), shielding people, people with mental health issues, grieving communities etc (mention access to physical activities too). 
+How digital can help not only audiences, but the way the museums work and function under the new normal? (Contactless interactives; Own mobile device tour apps; Visitor flow management; Virtual tours and the virtual museum.)
+Issues that have have not been adequately addressed during the crisis:
+Services/offerings for disabled audiences (could also make reference to our work with blind audiences an 3d prints that could be offered as a “print on demand” service in a similar way that museums offer prints of works of art). Generally lack of special provision (physical objects, sign language, look at Vocal Eyes newsletters)
+Diversity and decolonisation through/for the digital provision by addressing the sparsity of current efforts (maybe mention the SFMOMA examples here as well).
+
+-> any discussion regarding what future work is of interest, and conclusions
+->  how things might evolve
+Future work will include to develop a better  understanding on how audiences engaged with this type of content  , and the impact that it is having on audiences. 
+
+
+
+
+
+% %%%
+% %%% Figure 1
+% %%%
+% \begin{figure}[htb]
+%   \centering
+%   % the following command controls the width of the embedded PS file
+%   % (relative to the width of the current column)
+%   \includegraphics[width=.8\linewidth]{sampleFig}
+%   % replacing the above command with the one below will explicitly set
+%   % the bounding box of the PS figure to the rectangle (xl,yl),(xh,yh).
+%   % It will also prevent LaTeX from reading the PS file to determine
+%   % the bounding box (i.e., it will speed up the compilation process)
+%   % \includegraphics[width=.95\linewidth, bb=39 696 126 756]{sampleFig}
+%   %
+%   \parbox[t]{.9\columnwidth}{\relax
+%            For all figures please keep in mind that you \textbf{must not}
+%            use images with transparent background! 
+%            }
+%   %
+%   \caption{\label{fig:firstExample}
+%            Here is a sample figure.}
+% \end{figure}
+
+
+%-------------------------------------------------------------------------
+% bibtex
+\bibliographystyle{eg-alpha-doi}  
+\bibliography{egbibsample}        
+
+% biblatex with biber
+% \printbibliography                
+
+%-------------------------------------------------------------------------
+
+
+\end{document}
+
